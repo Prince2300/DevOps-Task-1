@@ -19,11 +19,11 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     apt-get install -y apache2
-    cp -rf /vagrant/web address/* /var/web address
-    cp -rf /vagrant/sites-available/* /etc/apache2/sites-available
+    cp -rf /vagrant/index.html/* /var/main.py
+    cp -rf /vagrant/hello.conf/* /etc/apache2/hello.conf
     a2enmod ssl
     a2enmod cgid
-    chmod +x ../../var/web address/python.com/main.py
+    chmod +x ../../var/main.py
     a2ensite hello
     service apache2 restart
   SHELL
